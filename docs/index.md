@@ -78,12 +78,12 @@ Si se quiere utilizar la aplicación sin el uso de docker, hay que proceder de l
     1. `javac -d ./classes -cp ./classes java-src/detect/*.java`
     2. `javac -d ./classes -cp ./classes java-src/*.java`
 - Creación del fichero *metaldetector.jar*:
-    '''
+    ```
     cp -r ./META-INF/ ./classes/
     cd ./classes/
     jar cmf META-INF/MANIFEST.MF metaldetector.jar *.class detect
     mv metaldetector.jar ../
     cd ..
-    '''
+    ```
 - Ejecución de la aplicación de demostración en Java: 
 
