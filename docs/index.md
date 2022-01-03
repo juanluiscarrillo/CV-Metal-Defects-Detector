@@ -63,11 +63,20 @@ En los siguientes apartados se ofrece más información.
 ### Utilización sin docker (para linux)
 
 Si se quiere utilizar la aplicación sin el uso de docker, hay que proceder de la siguiente forma:
-- Clonación del proyecto `git clone https://github.com/juanluiscarrillo/CV-Metal-Defects-Detector.git`
-- Acceso a la carpeta del proyecto `cd CV-Metal-Defects-Detector/`
-- Creación de las muestras de entrenamiento y de test `python MetalImperfectionsUtil.py`
-- Entrenamiento de la red neuronal `python MetalDefectsTrainer.py`
-- Creación de la carpeta *CNN_UTIL* `mkdir CNN_UTIL`
-- Copia del mejor modelo (el más reciente) a la carpeta *CNN_UTIL* `cp ./models/weights_improvement.*.h5 ./CNN_UTIL/` **NOTA:** Sustituir el * por el valor que corresponda
-- Cambio de nombre del modelo de la carpeta *CNN_UTIL* a *weights_improvement.h5* `mv ./models/weights_improvement.*.h5 ./models/weights_improvement.h5`
+- Clonación del proyecto: `git clone https://github.com/juanluiscarrillo/CV-Metal-Defects-Detector.git`
+- Acceso a la carpeta del proyecto: `cd CV-Metal-Defects-Detector/`
+- Creación de un entorno *venv*: `python3 -m venv ./metaldefects`
+- Activación del entorno: `source ./metaldefects/bin/activate`
+- Instalación de dependencias: `pip3 install -r requirements.txt` 
+- Creación de las muestras de entrenamiento y de test: `python MetalImperfectionsUtil.py`
+- Entrenamiento de la red neuronal: `python MetalDefectsTrainer.py`
+- Creación de la carpeta *CNN_UTIL*: `mkdir CNN_UTIL`
+- Copia del mejor modelo (el más reciente) a la carpeta *CNN_UTIL*: `cp ./models/weights_improvement.*.h5 ./CNN_UTIL/` **NOTA:** Sustituir el * por el valor que corresponda
+- Cambio de nombre del modelo de la carpeta *CNN_UTIL* a *weights_improvement.h5*: `mv ./models/weights_improvement.*.h5 ./models/weights_improvement.h5`
+- Lanzamiento del servidor: `python server.py 2> log.txt &` **NOTA:** En el fichero *log.txt* se guardan los fallos del servidor
+- Compilación del código Java: 
+1. `javac -d ./classes -cp ./classes java-src/detect/*.java`
+2. `javac -d ./classes -cp ./classes java-src/*.java`
+- Creación del fichero *metaldetector.jar*
+- 
 
