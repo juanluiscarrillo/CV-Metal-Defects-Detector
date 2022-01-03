@@ -6,6 +6,7 @@ El trabajo combina varias tecnologías:
 - Clasificación de los distintos tipos de defectos presentes en las imágenes, realizado con una red neuronal convolucional, implementada en Python con Tensorflow.
 - Detección de defectos (lugares en la imagen donde apararecen las imperfecciones), implementada en Python con OpenCv, mediante técnicas clásicas de Visión Artificial.
 - Servidor HTTP implementado en Python para recibir peticiones de detección sobre imágenes.
+- Test de integración continua para el código Python realizados con la librería *unittest*.
 - Librería Java para integrar la solución en una aplicación de cliente realizada en este lenguaje.
 - Creación de un Docker para el despliegue de la aplicación.
 
@@ -31,7 +32,9 @@ La solución debe poder integrarse fácilmente en una aplicación que utiliza el
 
 ## Diseño de la aplicación
 
-La clasificación se realiza con una red neuronal convolucional
+La clasificación se realiza con una red neuronal convolucional, mientras que la detección de las calses moho y arazaño se realiza con técnicas clásicas de visión artificial. 
+
+Para la red neuronal, a su vez, se ha implementado código, tanto para la fase de entrenamiento, como para la fase de detección. En la fase de entrenaminto
 
 
 
