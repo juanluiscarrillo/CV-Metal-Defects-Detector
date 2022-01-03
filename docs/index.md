@@ -63,5 +63,5 @@ En los siguientes apartados se ofrece más información.
 ### Utilización sin docker (para linux)
 
 Si se quiere utilizar la aplicación sin el uso de docker, hay que proceder de la siguiente forma:
-- Clonación del proyecto git clone `https://github.com/juanluiscarrillo/CV-Metal-Defects-Detector.git`
+- Clonación del proyecto `git clone https://github.com/juanluiscarrillo/CV-Metal-Defects-Detector.git`
 - Acceso a la carpeta del proyecto 
