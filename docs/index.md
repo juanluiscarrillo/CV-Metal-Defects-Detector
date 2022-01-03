@@ -16,7 +16,11 @@ A continuación, se desarrolla la explicación del trabajo
 Esta aplicación se desarrolla para la asignatura de *Aplicaciones* del Máster de Visión Artificial de la Universidad Rey Juan Carlos de Madrid. 
 
 Un supuesto cliente frabricante de láminas metálica desea contratar los servicios de una empresa de Visión Artificial para realizar el control de calidad de las láminas. Las láminas que fabrica pueden presentar 6 tipos de defectos o imperfecciones:
-
+- Moho (patches) 
+- Arañazos (scratches) 
+- Suciedad (inclusion) 
+- Resquebrajadura (crazing)
+- Corrosión (pitted_surface)
 
 
 El cliente proporciona un conjunto de imágenes, junto con sus anotaciones, de ejemplo, accesibles en el siguiente [enlace](https://www.kaggle.com/kaustubhdikshit/neu-surface-defect-database).
