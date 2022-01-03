@@ -75,8 +75,10 @@ Si se quiere utilizar la aplicación sin el uso de docker, hay que proceder de l
 - Cambio de nombre del modelo de la carpeta *CNN_UTIL* a *weights_improvement.h5*: `mv ./models/weights_improvement.*.h5 ./models/weights_improvement.h5`
 - Lanzamiento del servidor: `python server.py 2> log.txt &` **NOTA:** En el fichero *log.txt* se guardan los fallos del servidor
 - Compilación del código Java: 
-    1. `javac -d ./classes -cp ./classes java-src/detect/*.java`
-    2. `javac -d ./classes -cp ./classes java-src/*.java`
+    ```
+    javac -d ./classes -cp ./classes java-src/detect/*.java
+    javac -d ./classes -cp ./classes java-src/*.java
+    ```
 - Creación del fichero *metaldetector.jar*:
     ```
     cp -r ./META-INF/ ./classes/
