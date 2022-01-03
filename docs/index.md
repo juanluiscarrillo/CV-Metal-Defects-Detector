@@ -29,7 +29,17 @@ El cliente proporciona un conjunto de imágenes de ejemplo, junto con sus anotac
 
 La solución debe poder integrarse fácilmente en una aplicación que utiliza el cliente desarrollada en Java por los programadores del cliente, con la que gestiona el proceso productivo y con la que realiza la captura de las imágenes.
 
+## Diseño de la aplicación
 
+La clasificación se realiza con una red neuronal convolucional
+
+
+
+
+
+## Resultados
+
+La clasificación tiene una tasa de acierto aproximada del 95% sobre un conjunto de test elegido al azar. En cuanto a la detección en los casos de Mohos y Arañazos, se ha podido medir una IoU aproximada del 51%. Estos resultados están en consonancia con las especificaciones del cliente.
 
 
 
