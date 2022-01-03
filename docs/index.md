@@ -32,57 +32,19 @@ La solución debe poder integrarse fácilmente en una aplicación que utiliza el
 
 ## Diseño de la aplicación
 
-La clasificación se realiza con una red neuronal convolucional, mientras que la detección de las calses moho y arazaño se realiza con técnicas clásicas de visión artificial. 
+La clasificación se realiza con una red neuronal convolucional, mientras que la detección de las clases moho y arazaño se realiza con técnicas clásicas de visión artificial. 
 
-Para la red neuronal, a su vez, se ha implementado código, tanto para la fase de entrenamiento, como para la fase de detección. En la fase de entrenaminto
+Para la red neuronal, a su vez, se ha implementado código, tanto para la fase de entrenamiento, como para la fase de clasificación. En la fase de entrenamiento se crea un modelo de red, que será utilizado por la fase de clasificación. NOTA: El código relativo al entrenamiento no será aportado al cliente.
 
+Si el software clasifica el defecto como moho, se manda la imagen al código que detecta la presencia de moho. Si, por su parte, clasifica el defecto como arañazo, se manda la imagen al detector de arañazos. En el resto de los casos no es necesario el proceso de detección.
 
+Además, se ha implementado un servidor HTTP capaz de recibir una imagen y develver el resultado de la clasificación, y en su caso, detección. 
 
+Adicionalmente, se ha creado una librería en Java que actúa como cliente, de tal manera, que pueda ser integrada fácilmente en la aplicación principal del cliente que está desarrollada en este lenguaje. El cliente recibe un imagen y lanza una petición al servidor. Éste contesta con el resultado de la clasificación-detección. Junto con la librería, se ha creado en Java un pequeño programa de demostración para poder ser presentado al cliente.
+
+Por último, para facilitar el despliegue del software Python en el cliente, se ha empaquetado la solución en un Docker.
 
 
 ## Resultados
 
 La clasificación tiene una tasa de acierto aproximada del 95% sobre un conjunto de test elegido al azar. En cuanto a la detección en los casos de Mohos y Arañazos, se ha podido medir una IoU aproximada del 51%. Estos resultados están en consonancia con las especificaciones del cliente.
-
-
-
-
-
-
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/juanluiscarrillo/CV-Metal-Imperfections-Detector/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/juanluiscarrillo/CV-Metal-Imperfections-Detector/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
