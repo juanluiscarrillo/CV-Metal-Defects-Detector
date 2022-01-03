@@ -1,12 +1,12 @@
-# Visión Artificial: Metal imperfections detector 
+# Visión Artificial: Metal defects detector 
 
-Aplicación de visión artificial para la detección de imperfecciones en superficies de metales.
+Aplicación de visión artificial para la detección de defectos en superficies de metales.
 
 El trabajo combina varias tecnologías:
-- Clasificación de los distintos tipos de imperfecciones presentes en las imágenes, realizado con una red neuronal convolucional, implementada en Python con Tensorflow.
-- Detección de imperfecciones (lugares en la imagen donde apararecen las imperfecciones), implementada en Python con OpenCv, mediante técnicas clásicas de Visión Artificial.
+- Clasificación de los distintos tipos de defectos presentes en las imágenes, realizado con una red neuronal convolucional, implementada en Python con Tensorflow.
+- Detección de defectos (lugares en la imagen donde apararecen las imperfecciones), implementada en Python con OpenCv, mediante técnicas clásicas de Visión Artificial.
 - Servidor HTTP implementado en Python para recibir peticiones de detección sobre imágenes.
-- Librería Java para integrar la solución en una aplicación de cliente implementada en este lenguaje.
+- Librería Java para integrar la solución en una aplicación de cliente realizada en este lenguaje.
 - Creación de un Docker para el despliegue de la aplicación.
 
 A continuación, se desarrolla la explicación del trabajo
@@ -15,15 +15,20 @@ A continuación, se desarrolla la explicación del trabajo
 
 Esta aplicación se desarrolla para la asignatura de *Aplicaciones* del Máster de Visión Artificial de la Universidad Rey Juan Carlos de Madrid. 
 
-Un supuesto cliente frabricante de láminas metálica desea contratar los servicios de una empresa de Visión Artificial para realizar el control de calidad de las láminas. Las láminas que fabrica pueden presentar 6 tipos de defectos o imperfecciones:
+Un supuesto cliente, frabricante de láminas metálicas, desea contratar los servicios de una empresa de Visión Artificial para realizar el control de calidad de las láminas. Las láminas que fabrica pueden presentar 6 tipos de defectos o imperfecciones:
 - Moho (patches) 
 - Arañazos (scratches) 
 - Suciedad (inclusion) 
 - Resquebrajadura (crazing)
 - Corrosión (pitted_surface)
+- Escama laminada (rolled-in_scale)
 
+De estos defectos, el cliente quiere que se clasifiquen adecuadamente los tres primeros. Los otros tres, deben clasificarse como un categoría distinta (otra). Además, se debe detectar la posición concreta de los defectos en los dos primeros casos, esto es, moho y arañazos.
 
-El cliente proporciona un conjunto de imágenes, junto con sus anotaciones, de ejemplo, accesibles en el siguiente [enlace](https://www.kaggle.com/kaustubhdikshit/neu-surface-defect-database).
+El cliente proporciona un conjunto de imágenes de ejemplo, junto con sus anotaciones, accesibles en el siguiente [enlace](https://www.kaggle.com/kaustubhdikshit/neu-surface-defect-database).
+
+La solución debe poder integrarse fácilmente en una aplicación que utiliza el cliente desarrollada en Java por los programadores del cliente, con la que gestiona el proceso productivo y con la que realiza la captura de las imágenes.
+
 
 
 
