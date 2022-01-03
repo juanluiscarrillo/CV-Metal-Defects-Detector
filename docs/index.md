@@ -68,6 +68,6 @@ Si se quiere utilizar la aplicación sin el uso de docker, hay que proceder de l
 - Creación de las muestras de entrenamiento y de test `python MetalImperfectionsUtil.py`
 - Entrenamiento de la red neuronal `python MetalDefectsTrainer.py`
 - Creación de la carpeta *CNN_UTIL* `mkdir CNN_UTIL`
-- Copia del mejor modelo a la carpeta *CNN_UTIL* `cp ./models/weights_improvement.*.h5 ./CNN_UTIL/` **NOTA:** Sustituir el * por el valor que corresponda
-- Cambio de nombre del modelo de la carpeta *CNN_UTIL* `mv ./models/weights_improvement.*.h5 ./models/weights_improvement.h5`
+- Copia del mejor modelo (el más reciente) a la carpeta *CNN_UTIL* `cp ./models/weights_improvement.*.h5 ./CNN_UTIL/` **NOTA:** Sustituir el * por el valor que corresponda
+- Cambio de nombre del modelo de la carpeta *CNN_UTIL* a *weights_improvement.h5* `mv ./models/weights_improvement.*.h5 ./models/weights_improvement.h5`
 
