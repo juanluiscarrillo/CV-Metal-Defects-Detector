@@ -1,2 +1,2 @@
-# CV-Metal-Imperfections-Detector
-Computer Vision: Metal imperfections detector
+# CV-Metal-Defects-Detector
+Computer Vision: Metal Defects detector
