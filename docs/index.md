@@ -1,3 +1,32 @@
+# Visión Artificial: Metal imperfections detector 
+
+Aplicación de visión artificial para la detección de imperfecciones en superficies de metales.
+
+El trabajo combina varias tecnologías:
+- Clasificación de los distintos tipos de imperfecciones presentes en las imágenes, realizado con una red neuronal convolucional, implementada en Python con Tensorflow.
+- Detección de imperfecciones (lugares en la imagen donde apararecen las imperfecciones), implementada en Python con OpenCv, mediante técnicas clásicas de Visión Artificial.
+- Servidor HTTP implementado en Python para recibir peticiones de detección sobre imágenes.
+- Librería Java para integrar la solución en una aplicación de cliente implementada en este lenguaje.
+- Creación de un Docker para el despliegue de la aplicación.
+
+A continuación, se desarrolla la explicación del trabajo
+
+## Introducción
+
+Esta aplicación se desarrolla para la asignatura de *Aplicaciones* del Máster de Visión Artificial de la Universidad Rey Juan Carlos de Madrid. 
+
+Un supuesto cliente frabricante de láminas metálica desea contratar los servicios de una empresa de Visión Artificial para realizar el control de calidad de las láminas. Las láminas que fabrica pueden presentar 6 tipos de defectos o imperfecciones:
+
+
+
+El cliente proporciona un conjunto de imágenes, junto con sus anotaciones, de ejemplo, accesibles en el siguiente [enlace](https://www.kaggle.com/kaustubhdikshit/neu-surface-defect-database).
+
+
+
+
+
+
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/juanluiscarrillo/CV-Metal-Imperfections-Detector/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
