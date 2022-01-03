@@ -48,3 +48,20 @@ Por último, para facilitar el despliegue del software Python en el cliente, se 
 ## Resultados
 
 La clasificación tiene una tasa de acierto aproximada del 95% sobre un conjunto de test elegido al azar. En cuanto a la detección en los casos de Mohos y Arañazos, se ha podido medir una IoU aproximada del 51%. Estos resultados están en consonancia con las especificaciones del cliente.
+
+## Utilización
+
+La aplicación puede ser utilizada de dos formas distintas:
+- Con docker 
+- Sin docker
+
+En los siguientes apartados se ofrece más información.
+
+### Utilización con docker
+
+
+### Utilización sin docker (para linux)
+
+Si se quiere utilizar la aplicación sin el uso de docker, hay que proceder de la siguiente forma:
+- Clonación del proyecto 'git clone https://github.com/juanluiscarrillo/CV-Metal-Defects-Detector.git`
+- Acceso a la carpeta del proyecto 
