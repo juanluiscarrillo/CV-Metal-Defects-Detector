@@ -47,7 +47,7 @@ Por último, para facilitar el despliegue del software Python en el cliente, se 
 
 ## Resultados
 
-La clasificación tiene una tasa de acierto aproximada del 95% sobre un conjunto de test elegido al azar. En cuanto a la detección en los casos de Mohos y Arañazos, se ha podido medir una IoU aproximada del 51%. Estos resultados están en consonancia con las especificaciones del cliente.
+La clasificación tiene una tasa de acierto aproximada del 95% sobre un conjunto de test elegido al azar. En cuanto a la detección en los casos de Mohos y Arañazos, se ha podido medir una IoU aproximada del 58%. Estos resultados están en consonancia con las especificaciones del cliente.
 
 ## Utilización
 
@@ -64,4 +64,10 @@ En los siguientes apartados se ofrece más información.
 
 Si se quiere utilizar la aplicación sin el uso de docker, hay que proceder de la siguiente forma:
 - Clonación del proyecto `git clone https://github.com/juanluiscarrillo/CV-Metal-Defects-Detector.git`
-- Acceso a la carpeta del proyecto 
+- Acceso a la carpeta del proyecto `cd CV-Metal-Defects-Detector/`
+- Creación de las muestras de entrenamiento y de test `python MetalImperfectionsUtil.py`
+- Entrenamiento de la red neuronal `python MetalDefectsTrainer.py`
+- Creación de la carpeta *CNN_UTIL* `mkdir CNN_UTIL`
+- Copia del mejor modelo a la carpeta *CNN_UTIL* `cp ./models/weights_improvement.*.h5 ./CNN_UTIL/` **NOTA:** Sustituir el * por el valor que corresponda
+- Cambio de nombre del modelo de la carpeta *CNN_UTIL* `mv ./models/weights_improvement.*.h5 ./models/weights_improvement.h5`
+
