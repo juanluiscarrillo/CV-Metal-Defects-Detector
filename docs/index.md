@@ -87,5 +87,5 @@ Si se quiere utilizar la aplicación sin el uso de docker, hay que proceder de l
     mv metaldetector.jar ../
     cd ..
     ```
-- Ejecución de la aplicación de demostración en Java: 
+- Ejecución de la aplicación de demostración en Java: `java -jar metaldetector.jar`
 
