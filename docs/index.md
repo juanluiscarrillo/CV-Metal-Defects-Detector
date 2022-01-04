@@ -94,4 +94,5 @@ Además, es posible utilizar otros scripts python para comprobar el desempeño d
 Una vez realizado este paso, se detallan las posibilidades del software:
 - Pasar manualmente los test de *unittest*: `python MetalDefects_test.py NEU-DET`. 
 - Clasificar imágenes `python Application.py NEU-DET. Hay que pulsar la letra *q* para salir de la aplicación y cualquier otra letra para avanzar a la siguiente imagen.
-**NOTA:** En este caso *NEU-DET* es la ruta donde se encuentran las imágenes. Si éstas se encuentran en otro sitio, hay que indicar la ruta correspondiente.
+
+**NOTA:** En este caso *NEU-DET* es la ruta donde se encuentran las imágenes, junto con las anotaciones. Si éstas se encuentran en otro sitio, hay que indicar la ruta correspondiente.
