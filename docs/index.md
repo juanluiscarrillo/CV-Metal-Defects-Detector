@@ -51,18 +51,18 @@ La clasificación tiene una tasa de acierto aproximada del 95% sobre un conjunto
 
 ## Utilización
 
-La aplicación puede ser utilizada de dos formas distintas:
-- Con docker 
+La explicación se hará pensando que se está utilizando linux. Para otras sistemas operativos los pasos serán similares.
+
+La aplicación puede ser utilizada de tres formas distintas:
+- Con descarga del docker desde DorcerHub
+- Creando el docker 
 - Sin docker
 
 En los siguientes apartados se ofrece más información.
 
-### Utilización con docker
+### Utilización creando el docker
 
-
-### Utilización sin docker (para linux)
-
-Si se quiere utilizar la aplicación sin el uso de docker, hay que proceder de la siguiente forma:
+En el repositorio se guardan los fuentes y las imágenes, por lo que es necesario realizar una serie de pasos para poner en funcionamiento la aplicación. Los primeros 12 pasos son idénticos al caso de *utilización sin docker*. El resto son propios de este método. A continuación, se detallan todos los pasos:
 1. Clonación del proyecto: `git clone https://github.com/juanluiscarrillo/CV-Metal-Defects-Detector.git`
 2. Acceso a la carpeta del proyecto: `cd CV-Metal-Defects-Detector/`
 3. Creación de un entorno *venv*: `python3 -m venv ./metaldefects`
@@ -73,13 +73,13 @@ Si se quiere utilizar la aplicación sin el uso de docker, hay que proceder de l
 8. Creación de la carpeta *CNN_UTIL*: `mkdir CNN_UTIL`
 9. Copia del mejor modelo (el más reciente) a la carpeta *CNN_UTIL*: `cp ./models/weights_improvement.*.h5 ./CNN_UTIL/` **NOTA:** Sustituir el * por el valor que corresponda
 10. Cambio de nombre del modelo de la carpeta *CNN_UTIL* a *weights_improvement.h5*: `mv ./models/weights_improvement.*.h5 ./models/weights_improvement.h5`
-11. Lanzamiento del servidor: `python server.py 2> log.txt &` **NOTA:** En el fichero *log.txt* se guardan los fallos del servidor
-12. Compilación del código Java: 
+
+11. Compilación del código Java: 
     ```
     javac -d ./classes -cp ./classes java-src/detect/*.java
     javac -d ./classes -cp ./classes java-src/*.java
     ```
-13. Creación del fichero *metaldetector.jar*:
+12. Creación del fichero *metaldetector.jar*:
     ```
     cp -r ./META-INF/ ./classes/
     cd ./classes/
@@ -87,7 +87,20 @@ Si se quiere utilizar la aplicación sin el uso de docker, hay que proceder de l
     mv metaldetector.jar ../
     cd ..
     ```
-14. Ejecución de la aplicación de demostración en Java: `java -jar metaldetector.jar`
+13. Creación de la imagen del docker: `sudo docker build -t metaldefects:local .`
+14. En algunos entornos es necesario ejecutar el siguiente comando: `xhost +"local:docker@"`
+15. Creación de un contenedor: `docker run --rm -it -p 9000:9000 -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix metaldefects:local`
+
+
+
+
+
+### Utilización sin docker (para linux)
+
+Si se quiere utilizar la aplicación sin el uso de docker, hay que proceder de la siguiente forma:
+1. Realizar los 12 primeros pasos indicados en el apartado *Utilización creando el docker*
+2. Lanzamiento del servidor: `python server.py 2> log.txt &` **NOTA:** En el fichero *log.txt* se guardan los fallos del servidor
+3. Ejecución de la aplicación de demostración en Java: `java -jar metaldetector.jar`
 
 Además, es posible utilizar otros scripts python para comprobar el desempeño de la solución. A continuación, se indicará cómo hacerlo, pero previamente es necesario copiar el fichero *mi_test.csv* en la carpeta *CNN_UTIL*: `cp mi_test.csv ./CNN_UTIL/`.
 
