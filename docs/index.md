@@ -51,7 +51,7 @@ La clasificación tiene una tasa de acierto aproximada del 95% sobre un conjunto
 
 ## Utilización
 
-La explicación se hará pensando que se está utilizando linux. Para otras sistemas operativos los pasos serán similares.
+La explicación se hará pensando que se está utilizando linux. Para otras sistemas operativos los pasos serán similares. Además, se presupone que se tienen correctamente instalados: *git*, *pip*, *Java-jdk* y *docker*.
 
 La aplicación puede ser utilizada de tres formas distintas:
 - Con descarga del docker desde DorcerHub
