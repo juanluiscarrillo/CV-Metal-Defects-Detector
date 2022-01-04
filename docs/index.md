@@ -94,7 +94,7 @@ En el repositorio se guardan los fuentes y las imágenes, por lo que es necesari
 3. Creación de un entorno *venv*: `python3 -m venv ./metaldefects`
 4. Activación del entorno: `source ./metaldefects/bin/activate`
 5. Instalación de dependencias: `pip3 install -r requirements.txt` 
-6. Creación de las muestras de entrenamiento y de test: `python MetalImperfectionsUtil.py`
+6. Creación de las muestras de entrenamiento y de test: `python MetalDefectsUtil.py`
 7. Entrenamiento de la red neuronal: `python MetalDefectsTrainer.py`
 8. Creación de la carpeta *CNN_UTIL*: `mkdir CNN_UTIL`
 9. Copia del mejor modelo (el más reciente) a la carpeta *CNN_UTIL*: `cp ./models/weights_improvement.*.h5 ./CNN_UTIL/` **NOTA:** Sustituir el * por el valor que corresponda
