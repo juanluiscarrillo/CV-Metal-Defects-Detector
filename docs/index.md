@@ -60,6 +60,32 @@ La aplicación puede ser utilizada de tres formas distintas:
 
 En los siguientes apartados se ofrece más información.
 
+### Con descarga del docker desde DorcerHub
+
+Este es el procedimiento que requiere menos pasos:
+
+1. Si no se tiene habilitada la conexión del docker con la pantalla de la máquina, es necesario ejecutar este comando: `xhost +"local:docker@"`
+2. Ejecución del docker: `sudo docker run --rm -it -p 9000:9000 -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix juanluiscarrillo/metaldefects`. Si el docker no se encuentra en el sistema, se descargará del repositorio docker.
+3. Ejecución del servidor en segundo plano: `python server.py 2> log.txt &`
+4. Ejecución de la aplicación de demostración: `java -jar metaldetector.jar`
+
+También, es posible ejecutar la aplicación de demostración desde un terminal distinto al del docker. Para ello, una vez se ha ejecutado el servidor dentro del contenedor, hay que abrir un nuevo terminal y situarse en la carpeta *CV-Metal-Defects-Detector/*, para, a continuación, realizar los siguientes pasos:
+- Compilar el código Java: 
+    ```
+    javac -d ./classes -cp ./classes java-src/detect/*.java
+    javac -d ./classes -cp ./classes java-src/*.java
+    ```
+- Crear el fichero *metaldetector.jar*:
+    ```
+    cp -r ./META-INF/ ./classes/
+    cd ./classes/
+    jar cmf META-INF/MANIFEST.MF metaldetector.jar *.class detect
+    mv metaldetector.jar ../
+    cd ..
+    ```
+- Ejecutar la aplicación de demostración: `java -jar metaldetector.jar`
+
+
 ### Utilización creando el docker
 
 En el repositorio se guardan los fuentes y las imágenes, por lo que es necesario realizar una serie de pasos para poner en funcionamiento la aplicación. Los primeros 12 pasos son idénticos al caso de *utilización sin docker*. El resto son propios de este método. A continuación, se detallan todos los pasos:
@@ -90,7 +116,10 @@ En el repositorio se guardan los fuentes y las imágenes, por lo que es necesari
 13. Creación de la imagen del docker: `sudo docker build -t metaldefects:local .`
 14. En algunos entornos es necesario ejecutar el siguiente comando: `xhost +"local:docker@"`
 15. Creación de un contenedor: `docker run --rm -it -p 9000:9000 -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix metaldefects:local`
+16. Ejecución del servidor en segundo plano: `python server.py 2> log.txt &`
+17. Ejecución de la aplicación de demostración: `java -jar metaldetector.jar`
 
+También, es posible ejecutar la aplicación de demostración desde un terminal distinto al del docker. Para ello, una vez se ha ejecutado el servidor dentro del contenedor, hay que abrir un nuevo terminal y situarse en la carpeta *CV-Metal-Defects-Detector/*. Desde ahí, se lanza la aplicación de demostración `java -jar metaldetector.jar`.
 
 
 
