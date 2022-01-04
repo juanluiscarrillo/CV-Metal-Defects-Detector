@@ -26,7 +26,7 @@ Un supuesto cliente, frabricante de láminas metálicas, desea contratar los ser
 
 De estos defectos, el cliente quiere que se clasifiquen adecuadamente los tres primeros. Los otros tres, deben clasificarse como un categoría distinta (otra). Además, se debe detectar la posición concreta de los defectos en los dos primeros casos, esto es, moho y arañazos.
 
-El cliente proporciona un conjunto de imágenes de ejemplo, junto con sus anotaciones, accesibles en el siguiente [enlace](https://www.kaggle.com/kaustubhdikshit/neu-surface-defect-database).
+El cliente proporciona un conjunto de imágenes de ejemplo, junto con sus anotaciones, accesibles en el siguiente [enlace](https://www.kaggle.com/kaustubhdikshit/neu-surface-defect-database).Para mayor comodidad a la hora de utilizar este software, se incluyen las imágenes en el GitHub.
 
 La solución debe poder integrarse fácilmente en una aplicación que utiliza el cliente desarrollada en Java por los programadores del cliente, con la que gestiona el proceso productivo y con la que realiza la captura de las imágenes.
 
