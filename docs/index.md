@@ -60,7 +60,7 @@ La aplicación puede ser utilizada de tres formas distintas:
 
 En los siguientes apartados se ofrece más información.
 
-### Con descarga del docker desde DorcerHub
+### Utilización con descarga del docker desde DorcerHub
 
 Este es el procedimiento que requiere menos pasos:
 
