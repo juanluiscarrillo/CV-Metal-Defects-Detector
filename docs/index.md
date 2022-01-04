@@ -26,7 +26,7 @@ Un supuesto cliente, frabricante de láminas metálicas, desea contratar los ser
 
 De estos defectos, el cliente quiere que se clasifiquen adecuadamente los tres primeros. Los otros tres, deben clasificarse como un categoría distinta (otra). Además, se debe detectar la posición concreta de los defectos en los dos primeros casos, esto es, moho y arañazos.
 
-El cliente proporciona un conjunto de imágenes de ejemplo, junto con sus anotaciones, accesibles en el siguiente [enlace](https://www.kaggle.com/kaustubhdikshit/neu-surface-defect-database).Para mayor comodidad a la hora de utilizar este software, se incluyen las imágenes en el GitHub.
+El cliente proporciona un conjunto de imágenes de ejemplo, junto con sus anotaciones, accesibles en el siguiente [enlace](https://www.kaggle.com/kaustubhdikshit/neu-surface-defect-database). Para mayor comodidad a la hora de utilizar este software, se incluyen las imágenes en el GitHub.
 
 La solución debe poder integrarse fácilmente en una aplicación que utiliza el cliente desarrollada en Java por los programadores del cliente, con la que gestiona el proceso productivo y con la que realiza la captura de las imágenes.
 
@@ -34,7 +34,7 @@ La solución debe poder integrarse fácilmente en una aplicación que utiliza el
 
 La clasificación se realiza con una red neuronal convolucional, mientras que la detección de las clases moho y arazaño se realiza con técnicas clásicas de visión artificial. 
 
-Para la red neuronal, a su vez, se ha implementado código, tanto para la fase de entrenamiento, como para la fase de clasificación. En la fase de entrenamiento se crea un modelo de red, que será utilizado por la fase de clasificación. NOTA: El código relativo al entrenamiento no será aportado al cliente.
+Para la red neuronal, a su vez, se ha implementado código, tanto para la fase de entrenamiento, como para la fase de clasificación. En la fase de entrenamiento se crea un modelo de red, que será utilizado por la fase de clasificación. La aplicación devuelve almacena los mejores pesos de la red que va encontrando en la carpeta *models*. NOTA: El mejor será el último que se ha guardado. Además, crea dos ficheros *.png* con las gráficas de precisión y pérdida del entrenamiento.
 
 Si el software clasifica el defecto como moho, se manda la imagen al código que detecta la presencia de moho. Si, por su parte, clasifica el defecto como arañazo, se manda la imagen al detector de arañazos. En el resto de los casos no es necesario el proceso de detección.
 
