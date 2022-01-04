@@ -126,12 +126,12 @@ También, es posible ejecutar la aplicación de demostración desde un terminal 
 
 
 
-### Utilización sin docker (para linux)
+### Utilización sin docker
 
 Si se quiere utilizar la aplicación sin el uso de docker, hay que proceder de la siguiente forma:
 1. Realizar los 12 primeros pasos indicados en el apartado *Utilización creando el docker*
-2. Lanzamiento del servidor: `python server.py 2> log.txt &` **NOTA:** En el fichero *log.txt* se guardan los fallos del servidor
-3. Ejecución de la aplicación de demostración en Java: `java -jar metaldetector.jar`
+2. Lanzar el servidor: `python server.py 2> log.txt &` **NOTA:** En el fichero *log.txt* se guardan los fallos del servidor
+3. Ejecutar la aplicación de demostración en Java: `java -jar metaldetector.jar`
 
 Además, es posible utilizar otros scripts python para comprobar el desempeño de la solución. A continuación, se indicará cómo hacerlo, pero previamente es necesario copiar el fichero *mi_test.csv* en la carpeta *CNN_UTIL*: `cp mi_test.csv ./CNN_UTIL/`.
 
