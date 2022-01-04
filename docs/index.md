@@ -98,7 +98,7 @@ En el repositorio se guardan los fuentes y las imágenes, por lo que es necesari
 7. Entrenamiento de la red neuronal: `python MetalDefectsTrainer.py`
 8. Creación de la carpeta *CNN_UTIL*: `mkdir CNN_UTIL`
 9. Copia del mejor modelo (el más reciente) a la carpeta *CNN_UTIL*: `cp ./models/weights_improvement.*.h5 ./CNN_UTIL/` **NOTA:** Sustituir el * por el valor que corresponda
-10. Cambio de nombre del modelo de la carpeta *CNN_UTIL* a *weights_improvement.h5*: `mv ./models/weights_improvement.*.h5 ./models/weights_improvement.h5`
+10. Cambio de nombre del modelo de la carpeta *CNN_UTIL* a *weights_improvement.h5*: `mv ./CNN_UTIL/weights_improvement.*.h5 ./CNN_UTIL/weights_improvement.h5`
 
 11. Compilación del código Java: 
     ```
