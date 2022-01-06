@@ -90,7 +90,7 @@ También, es posible ejecutar la aplicación de demostración desde un terminal 
 
 ### Utilización creando el docker
 
-En el repositorio se guardan los fuentes y las imágenes, por lo que es necesario realizar una serie de pasos para poner en funcionamiento la aplicación. Los primeros 12 pasos son idénticos al caso de *utilización sin docker*. El resto son propios de este método. A continuación, se detallan todos los pasos:
+En el repositorio se guardan los ficheros fuentes y las imágenes, por lo que es necesario realizar una serie de pasos para poner en funcionamiento la aplicación. Los primeros 12 pasos son idénticos al caso de *utilización sin docker*. El resto son propios de este método. A continuación, se detallan todos los pasos:
 1. Clonación del proyecto: `git clone https://github.com/juanluiscarrillo/CV-Metal-Defects-Detector.git`
 2. Acceso a la carpeta del proyecto: `cd CV-Metal-Defects-Detector/`
 3. Creación de un entorno *venv*: `python3 -m venv ./venv`
