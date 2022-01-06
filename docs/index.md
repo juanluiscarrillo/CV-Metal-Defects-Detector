@@ -90,24 +90,18 @@ También, es posible ejecutar la aplicación de demostración desde un terminal 
 
 ### Utilización creando el docker
 
-En el repositorio se guardan los ficheros fuentes y las imágenes, por lo que es necesario realizar una serie de pasos para poner en funcionamiento la aplicación. Los primeros 12 pasos son idénticos al caso de *utilización sin docker*. El resto son propios de este método. A continuación, se detallan todos los pasos:
+En el repositorio se guardan los ficheros fuentes y las imágenes, por lo que es necesario realizar una serie de pasos para poner en funcionamiento la aplicación. Los primeros 9 pasos son idénticos al caso de *utilización sin docker*. El resto son propios de este método. A continuación, se detallan todos los pasos:
 1. Clonación del proyecto: `git clone https://github.com/juanluiscarrillo/CV-Metal-Defects-Detector.git`
 2. Acceso a la carpeta del proyecto: `cd CV-Metal-Defects-Detector/`
 3. Creación de un entorno *venv*: `python3 -m venv ./venv`
 4. Activación del entorno: `source ./venv/bin/activate`
 5. Instalación de dependencias: `pip3 install -r requirements.txt` 
-6. Creación de las muestras de entrenamiento y de test: `python MetalDefectsUtil.py`
-7. Entrenamiento de la red neuronal: `python MetalDefectsTrainer.py`
-8. Creación de la carpeta *CNN_UTIL*: `mkdir CNN_UTIL`
-9. Copia del mejor modelo (el más reciente) a la carpeta *CNN_UTIL*: `cp ./models/weights_improvement.*.h5 ./CNN_UTIL/` **NOTA:** Sustituir el * por el valor que corresponda
-10. Cambio de nombre del modelo de la carpeta *CNN_UTIL* a *weights_improvement.h5*: `mv ./CNN_UTIL/weights_improvement.*.h5 ./CNN_UTIL/weights_improvement.h5`
-
-11. Compilación del código Java: 
+6. Compilación del código Java: 
     ```
     javac -d ./classes -cp ./classes java-src/detect/*.java
     javac -d ./classes -cp ./classes java-src/*.java
     ```
-12. Creación del fichero *metaldetector.jar*:
+7. Creación del fichero *metaldetector.jar*:
     ```
     cp -r ./META-INF/ ./classes/
     cd ./classes/
@@ -115,11 +109,13 @@ En el repositorio se guardan los ficheros fuentes y las imágenes, por lo que es
     mv metaldetector.jar ../
     cd ..
     ```
-13. Creación de la imagen del docker: `sudo docker build -t metaldefects:local .`
-14. En algunos entornos es necesario ejecutar el siguiente comando: `xhost +"local:docker@"`
-15. Creación de un contenedor: `docker run --rm -it -p 9000:9000 -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix metaldefects:local`
-16. Ejecución del servidor en segundo plano: `python server.py 2> log.txt &`
-17. Ejecución de la aplicación de demostración: `java -jar metaldetector.jar`
+8. Creación de las muestras de entrenamiento y de test: `python MetalDefectsUtil.py`
+9. Entrenamiento de la red neuronal: `python MetalDefectsTrainer.py`
+10. Creación de la imagen del docker: `sudo docker build -t metaldefects:local .`
+11. En algunos entornos es necesario ejecutar el siguiente comando: `xhost +"local:docker@"`
+12. Creación de un contenedor: `docker run --rm -it -p 9000:9000 -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix metaldefects:local`
+13. Ejecución del servidor en segundo plano: `python server.py 2> log.txt &`
+14. Ejecución de la aplicación de demostración: `java -jar metaldetector.jar`
 
 También, es posible ejecutar la aplicación de demostración desde un terminal distinto al del docker. Para ello, una vez se ha ejecutado el servidor dentro del contenedor, hay que abrir un nuevo terminal y situarse en la carpeta *CV-Metal-Defects-Detector/*. Desde ahí, se lanza la aplicación de demostración `java -jar metaldetector.jar`.
 
@@ -129,7 +125,7 @@ También, es posible ejecutar la aplicación de demostración desde un terminal 
 ### Utilización sin docker
 
 Si se quiere utilizar la aplicación sin el uso de docker, hay que proceder de la siguiente forma:
-1. Realizar los 12 primeros pasos indicados en el apartado *Utilización creando el docker*
+1. Realizar los 9 primeros pasos indicados en el apartado *Utilización creando el docker*
 2. Lanzar el servidor: `python server.py 2> log.txt &` **NOTA:** En el fichero *log.txt* se guardan los fallos del servidor
 3. Ejecutar la aplicación de demostración en Java: `java -jar metaldetector.jar`
 
