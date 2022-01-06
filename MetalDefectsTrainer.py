@@ -152,8 +152,7 @@ class MetalDefectsTrainer:
                                   write_images=True)
 
 
-        checkpoint_filepath=os.path.join(model_folder,
-                                         'weights_improvement.{epoch:02d}-{val_loss:.4f}.h5')
+        checkpoint_filepath=os.path.join(model_folder,default_model)
 
         model_checkpoint = ModelCheckpoint(checkpoint_filepath,
                                            monitor='val_loss',
@@ -236,13 +235,14 @@ class MetalDefectsTrainer:
 
 
 if __name__ == '__main__':
-    directorio_model = './models' # Path of model folder
+    model_folder = './CNN_UTIL' # Path of model folder
+    default_model = 'weights_improvement.h5'
     try:
         # Checking that the folder exists. If the folder does not exist an exception occurs
-        os.stat(directorio_model)
+        os.stat(model_folder)
     except:
         # Making the folder
-        os.mkdir(directorio_model)
+        os.mkdir(model_folder)
 
     # The object is created
     mif = MetalDefectsTrainer()
